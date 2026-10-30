@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="description" content="Beautiful floor, wall, bathroom and swimming pool tiling by Elly Angonga. Get in touch for a quote on your next tiling project.">
+  <title>Elly Angonga | Tiling &amp; Finishes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1c1b19;
+      --muted: #66635e;
+      --paper: #f6f4ef;
+      --white: #fff;
+      --gold: #805900;
+      --gold-fill: #d9ad43;
+      --gold-hover: #c99b2d;
+      --gold-light: #f0d37d;
+      --charcoal: #201e1a;
+      --silver: #e8e6e1;
+      --line: rgba(32, 30, 26, .15);
+      --serif: "Manrope", sans-serif;
+      --sans: "DM Sans", sans-serif;
+      --wrap: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+    .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { width: 24px; height: 1px; content: ""; background: currentColor; }
+    .section-title { max-width: 680px; margin: 16px 0; font: 600 clamp(34px, 5vw, 58px)/1.08 var(--serif); letter-spacing: -.055em; }
+    .section-copy { max-width: 540px; color: var(--muted); font-size: 16px; line-height: 1.75; }
+    .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 11px; padding: 0 22px; border: 1px solid var(--gold-fill); border-radius: 3px; background: var(--gold-fill); color: var(--ink); font-size: 13px; font-weight: 700; transition: background .2s, color .2s, transform .2s; }
+    .button:hover { transform: translateY(-2px); background: var(--gold-hover); }
+    .button-outline { background: transparent; color: var(--ink); border-color: var(--line); }
+    .button-outline:hover { background: var(--white); color: var(--ink); }
+    .arrow { font-size: 17px; line-height: 1; }
+
+    .topbar { border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    .topbar-inner { display: flex; min-height: 36px; align-items: center; justify-content: space-between; gap: 16px; }
+    .topbar-note { display: flex; align-items: center; gap: 8px; }
+    .topbar-note span:first-child { color: var(--gold); }
+    .nav { position: relative; z-index: 5; background: var(--paper); }
+    .nav-inner { display: flex; height: 82px; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; }
+    .brand-mark { width: 48px; height: 48px; flex: 0 0 48px; object-fit: contain; }
+    .brand-name { font: 800 15px var(--serif); letter-spacing: -.04em; }
+    .brand-caption { display: block; margin-top: 3px; color: var(--muted); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a:not(.button) { color: #53574f; font-size: 12px; font-weight: 600; }
+    .nav-links a:not(.button):hover { color: var(--gold); }
+    .nav-links .button { min-height: 44px; padding-inline: 16px; }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 20px; cursor: pointer; }
+
+    .hero { padding: 24px 0 72px; }
+    .hero-grid { display: grid; min-height: 575px; grid-template-columns: 1fr 1.03fr; align-items: center; gap: 6%; }
+    .hero-copy { padding: 30px 0; }
+    .hero h1 { max-width: 560px; margin: 20px 0; font: 600 clamp(48px, 6.3vw, 80px)/.99 var(--serif); letter-spacing: -.075em; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-copy > p { max-width: 440px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-proof { display: flex; align-items: center; gap: 13px; margin-top: 42px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .proof-icon { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--gold); font-size: 16px; }
+    .hero-art { position: relative; min-height: 520px; }
+    .hero-image { position: absolute; inset: 0 0 0 10%; height: 100%; }
+    .hero-image img { height: 100%; }
+    .hero-image::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 65%, rgba(20, 23, 20, .28)); }
+    .carousel-controls { position: absolute; right: 18px; bottom: 28px; z-index: 1; display: flex; align-items: center; gap: 8px; }
+    .carousel-arrow, .carousel-dot { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(255,255,255,.75); border-radius: 50%; background: rgba(32,30,26,.55); color: var(--white); cursor: pointer; }
+    .carousel-arrow { font-size: 19px; }
+    .carousel-dot { width: 10px; height: 10px; padding: 0; }
+    .carousel-dot[aria-current="true"] { background: var(--gold-fill); border-color: var(--gold-fill); }
+    .carousel-arrow:hover, .carousel-dot:hover { background: var(--gold); }
+    .hero-card { position: absolute; bottom: 28px; left: 0; display: flex; width: 210px; align-items: center; gap: 13px; padding: 16px; background: var(--paper); box-shadow: 0 12px 32px rgba(0,0,0,.1); }
+    .hero-card-icon { display: grid; width: 39px; height: 39px; flex: 0 0 auto; place-items: center; background: var(--gold-fill); color: var(--ink); font-size: 17px; }
+    .hero-card strong { display: block; font: 700 13px var(--serif); }
+    .hero-card small { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; }
+    .hero-side-label { position: absolute; top: 40px; right: -28px; color: var(--muted); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; writing-mode: vertical-rl; }
+    .hero-index { position: absolute; top: 32px; left: 0; color: var(--gold); font: 600 12px var(--serif); }
+
+    .trust-strip { background: var(--charcoal); color: var(--white); }
+    .trust-inner { display: grid; min-height: 108px; grid-template-columns: repeat(3, 1fr); align-items: center; }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 13px; padding: 0 12px; }
+    .trust-item + .trust-item { border-left: 1px solid rgba(255,255,255,.24); }
+    .trust-icon { color: var(--gold-light); font-size: 21px; }
+    .trust-item strong { display: block; font: 700 13px var(--serif); }
+    .trust-item small { display: block; margin-top: 4px; color: rgba(255,255,255,.72); font-size: 10px; }
+
+    .services { padding: 108px 0 112px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
+    .section-heading .section-title { margin-bottom: 0; }
+    .section-heading .section-copy { max-width: 380px; margin: 0 0 6px; font-size: 14px; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .service-card { padding: 28px; border: 1px solid var(--line); background: rgba(255,255,255,.32); transition: transform .25s, background .25s; }
+    .service-card:hover { transform: translateY(-5px); background: var(--white); }
+    .service-number { color: #96998f; font-size: 10px; letter-spacing: .1em; }
+    .service-symbol { display: grid; width: 48px; height: 48px; margin: 27px 0 22px; place-items: center; border: 1px solid var(--silver); color: var(--gold); font-size: 21px; }
+    .service-card h3 { margin: 0 0 11px; font: 700 20px var(--serif); letter-spacing: -.04em; }
+    .service-card p { min-height: 72px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .service-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 23px; color: var(--gold); font-size: 11px; font-weight: 700; }
+
+    .about { padding: 90px 0; background: var(--silver); }
+    .about-grid { display: grid; grid-template-columns: .95fr 1fr; align-items: center; gap: 10%; }
+    .about-image-wrap { position: relative; padding: 0 32px 32px 0; }
+    .about-image-wrap img { height: 440px; }
+    .about-image-accent { position: absolute; right: 0; bottom: 0; z-index: 0; width: 55%; height: 55%; border: 1px solid var(--gold-fill); }
+    .about-image-wrap img { position: relative; z-index: 1; }
+    .about-copy .section-title { font-size: clamp(36px, 4.4vw, 54px); }
+    .about-copy > p { color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .about-points { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 20px; margin: 27px 0 30px; }
+    .about-point { display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; }
+    .check { display: grid; width: 20px; height: 20px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #f0e2bf; color: var(--gold); font-size: 11px; }
+
+    .gallery { padding: 106px 0 112px; }
+    .gallery-header { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+    .gallery-header .section-title { margin-bottom: 0; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 230px 230px; gap: 14px; }
+    .gallery-item { position: relative; overflow: hidden; background: var(--silver); }
+    .gallery-item img { height: 100%; transition: transform .5s; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .gallery-label { position: absolute; right: 12px; bottom: 12px; left: 12px; padding: 12px 14px; background: rgba(246,244,239,.94); font: 700 12px var(--serif); }
+    .gallery-note { margin: 16px 0 0; color: var(--muted); font-size: 11px; }
+
+    .process { padding: 88px 0 95px; background: var(--charcoal); color: var(--white); }
+    .process .eyebrow { color: var(--gold-light); }
+    .process .section-title { max-width: 580px; }
+    .process .section-copy { color: rgba(255,255,255,.7); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 45px; }
+    .process-step { padding-top: 20px; border-top: 1px solid rgba(255,255,255,.3); }
+    .process-step span { color: var(--gold-light); font-size: 10px; letter-spacing: .14em; }
+    .process-step h3 { margin: 19px 0 9px; font: 700 16px var(--serif); }
+    .process-step p { max-width: 215px; margin: 0; color: rgba(255,255,255,.7); font-size: 12px; line-height: 1.7; }
+
+    .contact { padding: 104px 0; }
+    .contact-box { display: grid; grid-template-columns: 1fr .8fr; gap: 7%; padding: 56px; background: var(--silver); }
+    .contact-box .section-title { max-width: 510px; font-size: clamp(38px, 5vw, 60px); }
+    .contact-box .section-copy { font-size: 14px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 13px; margin-top: 28px; }
+    .contact-detail-icon { display: grid; width: 39px; height: 39px; flex: 0 0 auto; place-items: center; background: var(--white); color: var(--gold); }
+    .contact-detail strong { display: block; font: 700 12px var(--serif); }
+    .contact-detail small { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+    .contact-detail-link:hover strong { color: var(--gold); }
+    .contact-actions { align-self: center; padding: 26px; background: var(--paper); }
+    .contact-actions h3 { margin: 0 0 9px; font: 700 19px var(--serif); letter-spacing: -.03em; }
+    .contact-actions p { margin: 0 0 20px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .contact-actions .button { width: 100%; }
+    .contact-actions .button + .button { margin-top: 10px; }
+    .contact-actions .button-outline { background: var(--paper); }
+
+    .footer { padding: 26px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer small { color: var(--muted); font-size: 10px; }
+    .footer-links { display: flex; gap: 20px; color: var(--muted); font-size: 10px; }
+    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 8; display: grid; width: 54px; height: 54px; place-items: center; border-radius: 50%; background: #25d366; color: white; box-shadow: 0 5px 20px rgba(0,0,0,.2); font-size: 23px; transition: transform .2s; }
+    .whatsapp-float:hover { transform: translateY(-3px); }
+
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 36px, var(--wrap)); }
+      .nav-inner { height: 70px; }
+      .menu-toggle { display: block; }
+      .nav-links { position: absolute; top: 70px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 18px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a:not(.button) { padding: 13px 4px; border-bottom: 1px solid var(--line); }
+      .nav-links .button { margin-top: 13px; }
+      .hero { padding-top: 9px; }
+      .hero-grid { min-height: 0; grid-template-columns: 1fr; gap: 32px; }
+      .hero-copy { padding: 28px 0 0; }
+      .hero h1 { max-width: 580px; }
+      .hero-art { min-height: min(82vw, 470px); }
+      .hero-image { left: 8%; }
+      .hero-side-label { right: -12px; }
+      .hero-proof { margin-top: 28px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 12px; }
+      .services, .gallery { padding: 78px 0; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .about { padding: 72px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 44px; }
+      .about-image-wrap { max-width: 550px; }
+      .about-image-wrap img { height: min(75vw, 420px); }
+      .gallery-header { align-items: start; flex-direction: column; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 220px); }
+      .process { padding: 72px 0; }
+      .process-grid { grid-template-columns: 1fr 1fr; row-gap: 34px; }
+      .contact { padding: 72px 0; }
+      .contact-box { grid-template-columns: 1fr; gap: 28px; padding: 34px; }
+      .contact-actions { padding: 22px; }
+    }
+    @media (max-width: 500px) {
+      .topbar-inner { min-height: 32px; font-size: 9px; }
+      .topbar-note:last-child { display: none; }
+      .wrap { width: calc(100% - 32px); }
+      .hero h1 { font-size: clamp(46px, 14vw, 66px); }
+      .hero-copy > p { font-size: 14px; }
+      .hero-art { min-height: 340px; }
+      .trust-inner { grid-template-columns: 1fr; padding: 8px 0; }
+      .trust-item { justify-content: flex-start; min-height: 67px; padding-left: 20%; }
+      .trust-item + .trust-item { border-top: 1px solid rgba(255,255,255,.24); border-left: 0; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card:last-child { grid-column: auto; }
+      .service-card { padding: 23px; }
+      .about-points { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-rows: repeat(3, 190px); gap: 9px; }
+      .gallery-label { right: 7px; bottom: 7px; left: 7px; padding: 9px; font-size: 10px; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 26px 15px; }
+      .contact-box { padding: 26px 20px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .whatsapp-float { right: 15px; bottom: 15px; width: 50px; height: 50px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-note"><span>●</span><span>Professional floor, wall &amp; bathroom tiling</span></div>
+      <div class="topbar-note"><span>✦</span><span>Quality workmanship. Beautiful finishes.</span></div>
+    </div>
+  </div>
+  <header class="nav">
+    <nav class="wrap nav-inner" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Elly Angonga home">
+        <img class="brand-mark" src="Metallic EA Tile Monogram.png" alt="full house tiling and finishes logo">
+        <span><span class="brand-name">Elly Angonga</span><span class="brand-caption">Tiling &amp; Finishes</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#process">How it works</a>
+        <a class="button whatsapp-link" href="#contact">Get a quote <span class="arrow">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Tiling done with care</div>
+          <h1>Good spaces start <em>from the ground up.</em></h1>
+          <p>Thoughtful tile installation for floors,pools,stairs, walls, bathrooms and repairs. Let’s make your next space feel finished, functional and beautifully yours.</p>
+          <div class="hero-actions">
+            <a class="button whatsapp-link" href="#contact">Let’s talk on WhatsApp <span class="arrow">↗</span></a>
+            <a class="button button-outline" href="#services">Explore services <span class="arrow">↓</span></a>
+          </div>
+          <div class="hero-proof"><span class="proof-icon">✳</span><span>Careful preparation. Clean lines.<br>Finishes made to last.</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-image"><img id="hero-slide-image" src="Experience%20the%20most%20luxurious%2010%20Marla%20house%20in%E2%80%A6.jpg" alt="Luxurious kitchen with a polished tiled floor"></div>
+          <div class="hero-card"><span class="hero-card-icon">⌂</span><span><strong>Made for real life</strong><small>Beautiful, practical finishes</small></span></div>
+          <div class="carousel-controls" role="group" aria-label="Hero photo carousel controls">
+            <button class="carousel-arrow" id="carousel-previous" type="button" aria-label="Previous photo">‹</button>
+            <button class="carousel-dot" type="button" aria-label="Show photo 1" aria-current="true"></button>
+            <button class="carousel-dot" type="button" aria-label="Show photo 2" aria-current="false"></button>
+            <button class="carousel-dot" type="button" aria-label="Show photo 3" aria-current="false"></button>
+            <button class="carousel-arrow" id="carousel-next" type="button" aria-label="Next photo">›</button>
+          </div>
+          <span class="hero-side-label">A better finish, from the first tile</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Our approach">
+      <div class="wrap trust-inner">
+        <div class="trust-item"><span class="trust-icon">◇</span><span><strong>Detail-led work</strong><small>Care at every step</small></span></div>
+        <div class="trust-item"><span class="trust-icon">⌂</span><span><strong>Homes &amp; businesses</strong><small>Projects sized to suit you</small></span></div>
+        <div class="trust-item"><span class="trust-icon">✓</span><span><strong>Clear communication</strong><small>From first chat to finish</small></span></div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><div class="eyebrow">What I do</div><h2 class="section-title">The right tile.<br>The right finish.</h2></div>
+          <p class="section-copy">From a single room refresh to a complete property, get skilled installation and a finish that feels right for your space.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-number">01 — FLOOR TILING</span><span class="service-symbol">▦</span>
+            <h3>Floor tiling</h3>
+            <p>Durable, even floors for living spaces, kitchens and more, with careful setting-out and clean grout lines.</p>
+            <a class="service-link whatsapp-link" href="#contact">Ask about floor tiling <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-number">02 — WALL TILING</span><span class="service-symbol">▤</span>
+            <h3>Wall tiling</h3>
+            <p>Bring kitchens, feature walls and everyday spaces to life with balanced layouts and a neat, polished finish.</p>
+            <a class="service-link whatsapp-link" href="#contact">Ask about wall tiling <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03 — BATHROOMS</span><span class="service-symbol">♨</span>
+            <h3>Toilet &amp; bathroom tiling</h3>
+            <p>Freshen up your bathroom with thoughtfully installed wall and floor tiles that look good and work hard.</p>
+            <a class="service-link whatsapp-link" href="#contact">Ask about bathroom tiling <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <span class="service-number">04 — POOL TILING</span><span class="service-symbol">≈</span>
+            <h3>Swimming pool tiling</h3>
+            <p>Give your pool a durable, water-ready finish with carefully installed tiles for the basin and surrounding areas.</p>
+            <a class="service-link whatsapp-link" href="#contact">Ask about pool tiling <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-image-wrap">
+          <div class="about-image-accent"></div>
+          <img src="Jasmely castillo's Amazon Page.jpg" alt="Large-format floor tiles being installed with spacers">
+        </div>
+        <div class="about-copy">
+          <div class="eyebrow">Meet your tiler</div>
+          <h2 class="section-title">A good finish is in the details.</h2>
+          <p>Hi, I’m Elly Angonga. I help homeowners and businesses bring their spaces together with dependable tiling and a personal approach. I believe good work starts with listening, careful preparation and taking pride in every line.</p>
+          <div class="about-points">
+            <div class="about-point"><span class="check">✓</span>Friendly, direct service</div>
+            <div class="about-point"><span class="check">✓</span>Careful surface preparation</div>
+            <div class="about-point"><span class="check">✓</span>Neat, considered layouts</div>
+            <div class="about-point"><span class="check">✓</span>Respect for your space</div>
+          </div>
+          <a class="button whatsapp-link" href="#contact">Tell me about your project <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="wrap">
+        <div class="gallery-header">
+          <div><div class="eyebrow">A little inspiration</div><h2 class="section-title">Imagine the possibilities.</h2></div>
+          <a class="button button-outline whatsapp-link" href="#contact">Plan your project <span class="arrow">↗</span></a>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="6 Best Liquid Pool Covers to Buy in 2020.jpg" alt="Blue mosaic tiles lining a swimming pool" loading="lazy"><span class="gallery-label">Swimming pool tiling</span></div>
+          <div class="gallery-item"><img src="20 Creative & Practical Stairs Design Ideas for Your Dream House.jpg" alt=" mosaic tiles lining a stairs" loading="lazy"><span class="gallery-label">Stairs tiling</span></div>
+          <div class="gallery-item"><img src="How%20to%20Tile%20Floors%20%E2%80%A2%20OhMeOhMy%20Blog.jpg" alt="Bathroom with finished wall and floor tiling" loading="lazy"><span class="gallery-label">floor tiling</span></div>
+          <div class="gallery-item"><img src="22 Stunning Taupe Backsplash Kitchen Designs.jpg" alt="Kitchen with tiled walls and floor" loading="lazy"><span class="gallery-label">Kitchen wall and floor tiling</span></div>
+          <div class="gallery-item"><img src="toilet.jpg" alt="Whole-room view with marble-look tiled flooring" loading="lazy"><span class="gallery-label">toilet tiling</span></div>
+          <div class="gallery-item"><img src="Jasmely%20castillo%27s%20Amazon%20Page.jpg" alt="Tiled floor extending across a home's living areas" loading="lazy"><span class="gallery-label">kitchen
+             tiling</span></div>
+          <div class="gallery-item"><img src="%23USA%20home%20decor%20idea.jpg" alt="Floor tiles being installed in a home" loading="lazy"><span class="gallery-label">Full house</span></div>
+        </div>
+        <p class="gallery-note">A selection of tiling and pool-finish photos.</p>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="eyebrow">Simple from start to finish</div>
+        <h2 class="section-title">Your project, made straightforward.</h2>
+        <p class="section-copy">A clear process helps you know what to expect at every stage.</p>
+        <div class="process-grid">
+          <article class="process-step"><span>STEP 01</span><h3>Tell me what you need</h3><p>Share your room, ideas and the kind of finish you have in mind.</p></article>
+          <article class="process-step"><span>STEP 02</span><h3>Discuss the details</h3><p>We’ll talk through the space, tile choice, preparation and timing.</p></article>
+          <article class="process-step"><span>STEP 03</span><h3>Get your quote</h3><p>Receive a clear quote based on the project details we discuss.</p></article>
+          <article class="process-step"><span>STEP 04</span><h3>Enjoy the finish</h3><p>Once agreed, the work begins with care and attention to detail.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-box">
+        <div>
+          <div class="eyebrow">Let’s get started</div>
+          <h2 class="section-title">Have a space in mind?</h2>
+          <p class="section-copy">Tell me a litte about your tiling project. We can talk through your ideas and the next steps, with no pressure.</p>
+          <a class="contact-detail contact-detail-link whatsapp-link" href="#contact"><span class="contact-detail-icon">◉</span><span><strong>WhatsApp</strong><small>0741 836 940</small></span></a>
+          <a class="contact-detail contact-detail-link" href="tel:+254741836940"><span class="contact-detail-icon">☎</span><span><strong>Call Elly</strong><small>0741 836 940</small></span></a>
+          <a class="contact-detail contact-detail-link" href="mailto:angongaelly96@gmail.com"><span class="contact-detail-icon">✉</span><span><strong>Email</strong><small>angongaelly96@gmail.com</small></span></a>
+        </div>
+        <div class="contact-actions">
+          <h3>Let’s talk about your project</h3>
+          <p>Share the type of tiling you need, where you’re based and when you’d like to get started.</p>
+          <a class="button whatsapp-link" href="#contact">Message Elly on WhatsApp <span class="arrow">↗</span></a>
+          <a class="button button-outline" href="#services">View tiling services <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#home"><img class="brand-mark" src="Metallic EA Tile Monogram.png" alt=""><span><span class="brand-name">Elly Angonga</span><span class="brand-caption">Tiling &amp; Finishes</span></span></a>
+      <small>© <span id="year"></span> Elly Angonga. All rights reserved.</small>
+      <div class="footer-links"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
+    </div>
+  </footer>
+  <a class="whatsapp-float whatsapp-link" href="#contact" aria-label="Chat with Elly on WhatsApp">◉</a>
+
+  <script>
+    const WHATSAPP_NUMBER = "254741836940";
+    const message = "Hi Elly, I found your website and would like to ask about a tiling project.";
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    document.querySelectorAll(".whatsapp-link").forEach((link) => {
+      link.href = whatsappUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const heroSlides = [
+      {
+        src: "Experience%20the%20most%20luxurious%2010%20Marla%20house%20in%E2%80%A6.jpg",
+        alt: "Luxurious kitchen with a polished tiled floor"
+      },
+      {
+        src: "toilet.jpg",
+        alt: "Swimming pool finished with blue mosaic tiles"
+      },
+      {
+        src: "Jasmely%20castillo%27s%20Amazon%20Page.jpg",
+        alt: "Tiled floor extending across a home's living areas"
+      }
+    ];
+    const heroImage = document.getElementById("hero-slide-image");
+    const carouselDots = [...document.querySelectorAll(".carousel-dot")];
+    let activeSlide = 0;
+    const showSlide = (index) => {
+      activeSlide = (index + heroSlides.length) % heroSlides.length;
+      heroImage.src = heroSlides[activeSlide].src;
+      heroImage.alt = heroSlides[activeSlide].alt;
+      carouselDots.forEach((dot, dotIndex) => {
+        dot.setAttribute("aria-current", String(dotIndex === activeSlide));
+      });
+    };
+    document.getElementById("carousel-previous").addEventListener("click", () => showSlide(activeSlide - 1));
+    document.getElementById("carousel-next").addEventListener("click", () => showSlide(activeSlide + 1));
+    carouselDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => showSlide(index));
+    });
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+      });
+    });
+  </script>
+</body>
+</html>
