@@ -102,7 +102,7 @@
     .service-card { padding: 28px; border: 1px solid var(--line); background: rgba(255,255,255,.32); transition: transform .25s, background .25s; }
     .service-card:hover { transform: translateY(-5px); background: var(--white); }
     .service-number { color: #96998f; font-size: 10px; letter-spacing: .1em; }
-    .service-symbol { display: grid; width: 48px; height: 48px; margin: 27px 0 22px; place-items: center; border: 1px solid var(--silver); color: var(--gold); font-size: 21px; }
+    .service-image { height: 132px; margin: 20px 0 18px; }
     .service-card h3 { margin: 0 0 11px; font: 700 20px var(--serif); letter-spacing: -.04em; }
     .service-card p { min-height: 72px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
     .service-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 23px; color: var(--gold); font-size: 11px; font-weight: 700; }
@@ -284,25 +284,25 @@
         </div>
         <div class="service-grid">
           <article class="service-card">
-            <span class="service-number">01 — FLOOR TILING</span><span class="service-symbol">▦</span>
+            <span class="service-number">01 — FLOOR TILING</span><img class="service-image" src="How%20to%20Tile%20Floors%20%E2%80%A2%20OhMeOhMy%20Blog.jpg" alt="Marble-look floor tiles being installed">
             <h3>Floor tiling</h3>
             <p>Durable, even floors for living spaces, kitchens and more, with careful setting-out and clean grout lines.</p>
             <a class="service-link whatsapp-link" href="#contact">Ask about floor tiling <span>↗</span></a>
           </article>
           <article class="service-card">
-            <span class="service-number">02 — WALL TILING</span><span class="service-symbol">▤</span>
+            <span class="service-number">02 — WALL TILING</span><img class="service-image" src="22 Stunning Taupe Backsplash Kitchen Designs.jpg" alt="Kitchen with decorative tiled walls">
             <h3>Wall tiling</h3>
             <p>Bring kitchens, feature walls and everyday spaces to life with balanced layouts and a neat, polished finish.</p>
             <a class="service-link whatsapp-link" href="#contact">Ask about wall tiling <span>↗</span></a>
           </article>
           <article class="service-card">
-            <span class="service-number">03 — BATHROOMS</span><span class="service-symbol">♨</span>
+            <span class="service-number">03 — BATHROOMS</span><img class="service-image" src="toilet.jpg" alt="Bathroom finished with patterned wall and floor tiles">
             <h3>Toilet &amp; bathroom tiling</h3>
             <p>Freshen up your bathroom with thoughtfully installed wall and floor tiles that look good and work hard.</p>
             <a class="service-link whatsapp-link" href="#contact">Ask about bathroom tiling <span>↗</span></a>
           </article>
           <article class="service-card">
-            <span class="service-number">04 — POOL TILING</span><span class="service-symbol">≈</span>
+            <span class="service-number">04 — POOL TILING</span><img class="service-image" src="6 Best Liquid Pool Covers to Buy in 2020.jpg" alt="Swimming pool finished with blue mosaic tiles">
             <h3>Swimming pool tiling</h3>
             <p>Give your pool a durable, water-ready finish with carefully installed tiles for the basin and surrounding areas.</p>
             <a class="service-link whatsapp-link" href="#contact">Ask about pool tiling <span>↗</span></a>
@@ -346,7 +346,7 @@
           <div class="gallery-item"><img src="toilet.jpg" alt="Whole-room view with marble-look tiled flooring" loading="lazy"><span class="gallery-label">toilet tiling</span></div>
           <div class="gallery-item"><img src="Jasmely%20castillo%27s%20Amazon%20Page.jpg" alt="Tiled floor extending across a home's living areas" loading="lazy"><span class="gallery-label">kitchen
              tiling</span></div>
-          <div class="gallery-item"><img src="%23USA%20home%20decor%20idea.jpg" alt="Floor tiles being installed in a home" loading="lazy"><span class="gallery-label">Full house</span></div>
+          <div class="gallery-item"><img src="USA-home-decor-idea.jpg" alt="Floor tiles being installed in a home" loading="lazy"><span class="gallery-label">Full house</span></div>
         </div>
         <p class="gallery-note">A selection of tiling and pool-finish photos.</p>
       </div>
@@ -405,7 +405,11 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     });
-    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
 
     const heroSlides = [
       {
@@ -421,37 +425,55 @@
         alt: "Tiled floor extending across a home's living areas"
       }
     ];
+
     const heroImage = document.getElementById("hero-slide-image");
     const carouselDots = [...document.querySelectorAll(".carousel-dot")];
+    const previousButton = document.getElementById("carousel-previous");
+    const nextButton = document.getElementById("carousel-next");
     let activeSlide = 0;
+
     const showSlide = (index) => {
+      if (!heroImage || !heroSlides.length) return;
+
       activeSlide = (index + heroSlides.length) % heroSlides.length;
       heroImage.src = heroSlides[activeSlide].src;
       heroImage.alt = heroSlides[activeSlide].alt;
+
       carouselDots.forEach((dot, dotIndex) => {
         dot.setAttribute("aria-current", String(dotIndex === activeSlide));
       });
     };
-    document.getElementById("carousel-previous").addEventListener("click", () => showSlide(activeSlide - 1));
-    document.getElementById("carousel-next").addEventListener("click", () => showSlide(activeSlide + 1));
+
+    if (previousButton) {
+      previousButton.addEventListener("click", () => showSlide(activeSlide - 1));
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => showSlide(activeSlide + 1));
+    }
+
     carouselDots.forEach((dot, index) => {
       dot.addEventListener("click", () => showSlide(index));
     });
 
     const menuButton = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-    menuButton.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("is-open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    });
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("is-open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open navigation");
+
+    if (menuButton && navLinks) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
       });
-    });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Open navigation");
+        });
+      });
+    }
   </script>
 </body>
 </html>
